@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Container from "@/components/container";
-import ThemeSwitch from "@/components/ThemeSwitch";
+import Container from "../../components/Container";
+import ThemeSwitch from "../../components/ThemeSwitch";
 
 export default function Footer(props) {
   return (

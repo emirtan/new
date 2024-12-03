@@ -1,4 +1,4 @@
-import { useTheme } from "@/providers/ThemeProvider";
+import { useTheme } from "../providers/ThemeProvider";
 import { SunIcon } from "@heroicons/react/24/outline";
 
 const ThemeSwitch = () => {

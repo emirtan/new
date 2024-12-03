@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import siteActions from "@/store/site/actions"
+import siteActions from "../store/site/actions"
 
 const Signup = () => {
   useEffect(() => {

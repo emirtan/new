@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { authService } from "@/service/auth"
-import { postService } from "@/service/post"
+import { authService } from "../service/auth"
+import { postService } from "../service/post"
 
 const CreatePost = () => {
   const [form, setForm] = useState({

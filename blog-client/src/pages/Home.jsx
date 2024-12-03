@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import Container from "@/components/Container";
-import PostList from "@/components/postlist";
-import { postService } from "@/service/post"
+import Container from "../components/Container";
+import PostList from "../components/Postlist";
+import { postService } from "../service/post"
 
 const Home = () => {
   const [posts, setPosts] = useState();

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { postService } from "@/service/post"
+import { postService } from "../service/post"
 
 const Posts = () => {
     const navigate = useNavigate();

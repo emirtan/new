@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import siteActions from "@/store/site/actions"
-import { authService } from "@/service/auth"
-import authActions from "@/store/auth/actions"
+import siteActions from "../store/site/actions"
+import { authService } from "../service/auth"
+import authActions from "../store/auth/actions"
 
 const Login = () => {
   const navigate = useNavigate()

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { cn } from "@/utils/cn";
+import { cn } from "../utils/cn";
 import { parseISO, format } from "date-fns";
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import CategoryLabel from "@/components/CategoryLabel";
+import CategoryLabel from "./CategoryLabel";
 
 const Postlist = ({
     post,

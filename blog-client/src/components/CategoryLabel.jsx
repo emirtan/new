@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import Label from "@/components/Label";
+import Label from "../components/Label";
 
 const CategoryLabel = ({
     categories,
