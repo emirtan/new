@@ -10,5 +10,5 @@ environments:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --optimize-autoloader --no-dev'
             - 'php artisan event:cache'
         deploy:
-            - 'php artisan migrate'
+            - 'php artisan migrate --force'
           # - 'npm ci && npm run build && rm -rf node_modules'
