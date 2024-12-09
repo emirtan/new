@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthToken } from "../store/auth/hooks"
+import { useAuthToken } from "@/store/auth/hooks"
 
 const PrivateRoute = ({ children }) => {
   const token = useAuthToken();

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import { parseISO, format } from "date-fns";
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import CategoryLabel from "./CategoryLabel";
+import CategoryLabel from "@/components/CategoryLabel";
 
 const Postlist = ({
     post,
@@ -14,9 +14,10 @@ const Postlist = ({
     fontWeight
 }) => {
 
-    const imageProps = post?.mainImage
-    ? post.mainImage
+    const imageProps = post?.main_image
+    ? `http://127.0.0.1:8000${post.main_image}` 
     : null;
+
   return (
     <>
       <div
@@ -42,12 +43,12 @@ const Postlist = ({
             }`}>
             {imageProps ? (
               <img
-                src={imageProps.src}
-                {...(post.mainImage.blurDataURL && {
-                  placeholder: "blur",
-                  blurDataURL: post.mainImage.blurDataURL
-                })}
-                alt={post.mainImage.alt || "Thumbnail"}
+                src={imageProps}
+                // {...(post.mainImage.blurDataURL && {
+                //   placeholder: "blur",
+                //   blurDataURL: post.mainImage.blurDataURL
+                // })}
+                // alt={post.mainImage.alt || "Thumbnail"}
                 className="object-cover transition-all"
                 sizes="(max-width: 768px) 30vw, 33vw"
               />
@@ -145,7 +146,7 @@ const Postlist = ({
 }
 
 Postlist.propTypes = {
-    post: PropTypes.array,
+    post: PropTypes.object,
     aspect: PropTypes.any,
     minimal: PropTypes.any,
     pathPrefix: PropTypes.any,

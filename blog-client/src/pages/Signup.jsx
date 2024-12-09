@@ -1,7 +1,12 @@
-import { useEffect } from "react"
-import siteActions from "../store/site/actions"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import siteActions from "@/store/site/actions"
+import authActions from "@/store/auth/actions"
+import { authService } from "@/service/auth"
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     siteActions.hideFooterAndNavbar();
       
@@ -10,22 +15,43 @@ const Signup = () => {
     }
   }, []);
 
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    authService.register({
+        email: form.email,
+        password: form.password
+    }).then((response) => {
+        authActions.setToken(response.token)
+        if(response?.user) {
+            authActions.setUser(response.user)
+        }
+    }).catch((err) => {
+        console.log("err", err)
+    })
+    .finally(() => {
+        navigate("/")
+    })
+  }
+
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">Kayıt Ol</h2>
-        <form>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-2" htmlFor="name">
-              İsim
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Adınızı girin"
-            />
-          </div>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-2" htmlFor="email">
               E-posta
@@ -33,6 +59,9 @@ const Signup = () => {
             <input
               type="email"
               id="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="E-posta adresinizi girin"
             />
@@ -44,6 +73,9 @@ const Signup = () => {
             <input
               type="password"
               id="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Şifrenizi oluşturun"
             />

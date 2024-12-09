@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { postService } from "../service/post"
+import { postService } from "@/service/post"
 
 const Posts = () => {
     const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Posts = () => {
           >
             {/* Görsel */}
             <img
-              src={item.main_image}
+              src={`http://127.0.0.1:8000${item.main_image}`}
               alt={item.title}
               className="w-full h-48 object-cover"
             />

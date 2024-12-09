@@ -1,12 +1,12 @@
 import { Fragment, useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import { Menu, MenuButton, MenuItems, MenuItem, Transition, Disclosure } from "@headlessui/react";
-import Container from "../../components/Container";
+import Container from "@/components/Container";
 import { Link } from "react-router-dom";
-import { useAuthToken } from "../../store/auth/hooks"
-import { authService } from "../../service/auth"
+import { useAuthToken } from "@/store/auth/hooks"
+import { authService } from "@/service/auth"
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { cn } from "../../utils/cn"
+import { cn } from "@/utils/cn"
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -128,7 +128,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Emirhan Sonmez
+                        Stablo
                       </span>
                     )}
                   </Link>
@@ -141,7 +141,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Emirhan Sonmez
+                        Stablo
                       </span>
                     )}
                   </Link>

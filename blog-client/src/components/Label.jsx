@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 export default function Label(props) {
   const color = {

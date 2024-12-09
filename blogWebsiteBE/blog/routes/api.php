@@ -21,6 +21,7 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::post('/post/{postId}', [PostController::class, 'show'])->middleware('auth:api');
 Route::post('/postAdd', [PostController::class, 'add'])->middleware('auth:api');
 Route::delete('/postDelete/{postId}', [PostController::class, 'delete'])->middleware('auth:api');
+Route::put('/posts/{postId}', [PostController::class, 'update'])->middleware('auth:api');
 Route::post('/check', [PostController::class, 'checkToken'])->middleware('auth:api');
 
 

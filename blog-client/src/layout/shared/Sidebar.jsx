@@ -18,6 +18,12 @@ const Sidebar = () => {
           >
             Postları Görüntüle
           </Link>
+          <Link
+            to="/"
+            className="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200"
+          >
+            Siteyi Görüntüle
+          </Link>
         </nav>
       </div>
     </aside>

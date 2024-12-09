@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('content')->unique();
+            $table->text('content');
             $table->string('main_image')->nullable();
-            $table->json('author');
-            $table->json('categories');
+            $table->json('author')->nullable();
+            $table->json('categories')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

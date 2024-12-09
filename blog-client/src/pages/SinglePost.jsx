@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
-import { postService } from "../service/post"
+import { postService } from "@/service/post"
 
 const SinglePost = () => {
   const { id } = useParams();

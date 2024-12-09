@@ -10,7 +10,7 @@ async function request(props) {
         ...options
     }
 
-    const headers = {
+    const headers = props.headers ? props.headers : {
         'Content-Type': 'application/json',
         'Accept': 'multipart/form-data'
     }
@@ -27,7 +27,15 @@ async function request(props) {
     }
 
     if (method.toLowerCase() === 'post' || method.toLowerCase() === 'put' || method.toLowerCase() === 'patch') {
-        fetchOptions.body = JSON.stringify(body);
+        // fetchOptions.body = JSON.stringify(body);
+        if (body instanceof FormData) {
+            fetchOptions.body = body;
+            // Content-Type başlığını otomatik olarak FormData bırakıyoruz
+        } else {
+            // JSON veri gönderiyorsa
+            fetchOptions.body = JSON.stringify(body);
+            headers['Content-Type'] = 'application/json'; // JSON için uygun başlık
+        }
     }
 
     const response = await fetch(import.meta.env.VITE_API_URL + '/' + url, fetchOptions)

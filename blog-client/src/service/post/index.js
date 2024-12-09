@@ -2,7 +2,9 @@ import { API } from "@/utils/request";
 
 export const postService = {
     addPost(data) {
-        return API.post("postAdd", data);
+        return API.post("postAdd", data, {
+            'Accept': "multipart/form-data",
+        });
     },
     getPost(data) {
         return API.get(`posts?page=${data}`);
