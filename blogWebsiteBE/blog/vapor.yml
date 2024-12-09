@@ -9,6 +9,5 @@ environments:
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install'
             - 'php artisan event:cache'
-        deploy:
             - 'php artisan migrate'
           # - 'npm ci && npm run build && rm -rf node_modules'
