@@ -1,4 +1,4 @@
-[2024-12-10 00:23:25] production.ERROR: Database connection [mysqql] not configured. {"exception":"[object] (InvalidArgumentException(code: 0): Database connection [mysqql] not configured. at /Users/emirhan/Desktop/new/blogWebsiteBE/blog/.vapor/build/app/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php:203)
+[2024-12-10 00:27:41] production.ERROR: Database connection [mysqql] not configured. {"exception":"[object] (InvalidArgumentException(code: 0): Database connection [mysqql] not configured. at /Users/emirhan/Desktop/new/blogWebsiteBE/blog/.vapor/build/app/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php:203)
 [stacktrace]
 #0 /Users/emirhan/Desktop/new/blogWebsiteBE/blog/.vapor/build/app/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(166): Illuminate\\Database\\DatabaseManager->configuration('mysqql')
 #1 /Users/emirhan/Desktop/new/blogWebsiteBE/blog/.vapor/build/app/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(93): Illuminate\\Database\\DatabaseManager->makeConnection('mysqql')
