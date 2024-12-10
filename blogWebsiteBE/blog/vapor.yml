@@ -9,6 +9,7 @@ environments:
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --optimize-autoloader --no-dev'
             - 'php artisan config:clear'
+            - 'php artisan cache:clear'
             - 'php artisan config:cache'
             - 'php artisan event:cache'
         deploy:
