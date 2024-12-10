@@ -1,0 +1,17 @@
+id: 67905
+name: blog-website
+environments:
+    production:
+        database: blog1
+        memory: 1024
+        cli-memory: 512
+        runtime: 'php-8.3:al2'
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --optimize-autoloader --no-dev'
+            - 'php artisan config:clear'
+            - 'php artisan cache:clear'
+            - 'php artisan config:cache'
+            - 'php artisan event:cache'
+        deploy:
+            - 'php artisan migrate:refresh --force'
+          # - 'npm ci && npm run build && rm -rf node_modules'
