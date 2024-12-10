@@ -8,6 +8,7 @@ environments:
         runtime: 'php-8.3:al2'
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --optimize-autoloader --no-dev'
+            - 'php artisan config:cache'
             - 'php artisan event:cache'
         deploy:
             - 'php artisan migrate:refresh --force'
