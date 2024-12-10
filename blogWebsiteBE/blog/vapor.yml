@@ -12,5 +12,5 @@ environments:
             - 'php artisan config:cache'
             - 'php artisan event:cache'
         deploy:
-            - 'php artisan migrate'
+            - 'php artisan migrate:refresh --force'
           # - 'npm ci && npm run build && rm -rf node_modules'
